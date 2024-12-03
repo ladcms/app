@@ -11,7 +11,16 @@ Route::get('/', function () {
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
-});
+})->name('main');
+
+Route::get('/language', function () {
+    return Inertia::render('Language', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+})->name('change-language');
 
 Route::middleware([
     'auth:sanctum',

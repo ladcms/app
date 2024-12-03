@@ -3,6 +3,8 @@
 namespace App\Http\Middleware;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Route;
 use Inertia\Middleware;
 use Tighten\Ziggy\Ziggy;
 
@@ -36,6 +38,10 @@ class HandleInertiaRequests extends Middleware
                 ...(new Ziggy)->toArray(),
                 'location' => $request->url(),
             ],
+            'canLogin' => fn() => Route::has('login'),
+            'canRegister' => fn() => Route::has('register'),
+            'current_locale' => fn() => __('common.current_locale'),
+            'time_rendered' => fn() => round(microtime(true) - LARAVEL_START, 3)
         ];
     }
 }
