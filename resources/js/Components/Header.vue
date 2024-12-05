@@ -12,8 +12,8 @@ defineProps({
 </script>
 
 <template>
-    <header class="text-[#969696] bg-[#383838]">
-        <div class="min-w-[600px] max-w-[1000px]">
+    <header class="text-[#969696] bg-[#383838] mb-[32px]">
+        <div class="min-w-[600px] max-w-[1000px] mx-auto my-0">
             <h1 class="overflow-hidden text-center text-[32px] font-bold leading-[62px]">{{ headerTitle }}</h1>
             <div class="h-[23px]" v-if="!route().current('main')">
                 <Link href="/"
@@ -26,9 +26,8 @@ defineProps({
             </span>
             </div>
         </div>
-        <div
-            class="pb-[5px] bg-[#FFBB5B] border-b border-solid border-[rgba(0,0,0,0.13)] shadow-[0_2px_5px_-3px_#000_inset] items-center justify-end ">
-            <div class="min-w-[600px] max-w-[1000px]">
+        <div class="pb-[5px] bg-[#FFBB5B] border-b border-solid border-[rgba(0,0,0,0.13)] shadow-[0_2px_5px_-3px_#000_inset]">
+            <div class="min-w-[600px] max-w-[1000px] mx-auto my-0 flex justify-end">
                 <div class="flex gap-x-[2px]">
                     <template v-if="$page.props.canLogin">
                         <template v-if="$page.props.auth.user">
@@ -57,7 +56,6 @@ defineProps({
                     </template>
                 </div>
             </div>
-
         </div>
     </header>
 </template>

@@ -1,5 +1,4 @@
 <script setup>
-import {Head, Link} from '@inertiajs/vue3';
 import GuestLayout from "@/Layouts/GuestLayout.vue";
 
 defineProps({
@@ -28,5 +27,5 @@ function handleImageError() {
 </script>
 
 <template>
-    <GuestLayout headerTitle="LaDCMS движок для Вашего сайта" />
+    <GuestLayout headerTitle="LaDCMS - движок для Вашего сайта" />
 </template>
