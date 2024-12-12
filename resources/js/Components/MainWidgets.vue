@@ -1,4 +1,5 @@
 <script setup>
+import {shallowRef} from "vue";
 import News from "@/Components/Widgets/News.vue";
 import ChatMini from "@/Components/Widgets/ChatMini.vue";
 import {ref} from "vue";
@@ -6,11 +7,11 @@ import {ref} from "vue";
 const allWidgets = [
     {
         name: 'News',
-        component: News,
+        component: shallowRef(News),
     },
     {
         name: 'ChatMini',
-        component: ChatMini,
+        component: shallowRef(ChatMini),
     }
 ];
 

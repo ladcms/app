@@ -12,7 +12,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        $middleware->trustProxies(at: ['172.21.0.1']);
+        $middleware->trustProxies(at: ['REMOTE_ADDR']);
 
         $middleware->web(append: [
             \App\Http\Middleware\HandleInertiaRequests::class,
