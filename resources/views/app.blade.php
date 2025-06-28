@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="x-request-duration" content="--RequestDuration--" />
 
         {{-- Inline script to detect system dark mode preference and apply it immediately --}}
         <script>
@@ -43,7 +44,7 @@
         @vite(['resources/js/app.ts', "resources/js/pages/{$page['component']}.vue"])
         @inertiaHead
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-dcms antialiased leading-[normal]">
         @inertia
     </body>
 </html>

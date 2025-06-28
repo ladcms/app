@@ -185,3 +185,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+:where(html, body, #app) {
+    @apply h-full;
+}
+
+.font-dcms {
+    font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
+}
+
+* {
+    vertical-align: top;
+}

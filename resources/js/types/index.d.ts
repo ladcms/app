@@ -37,3 +37,25 @@ export interface User {
 }
 
 export type BreadcrumbItemType = BreadcrumbItem;
+
+export interface NavigationItem {
+    title: string;
+    url: string;
+    icon: string[] | string;
+    isAuth: boolean;
+    isVip: boolean;
+    group: string;
+    children?: NavigationItem[];
+}
+
+export interface NavigationGroup {
+    title: string;
+    url: string;
+    icon: string;
+    isAuth: boolean;
+    isVip: boolean;
+    group: string;
+    children: NavigationItem[];
+}
+
+export type NavigationGroups = NavigationGroup[];
