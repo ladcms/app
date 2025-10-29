@@ -16,15 +16,19 @@ class RequestTiming
      */
     public function handle(Request $request, Closure $next): Response
     {
+        $start = microtime(true);
+
         $response = $next($request);
 
-        $duration = round(microtime(true) - LARAVEL_START, 4);
+        $duration = round(microtime(true) - $start, 4);
 
         $response->headers->set('X-Request-Duration', $duration);
 
         $content = $response->getContent();
-        $content = str_replace('--RequestDuration--', $duration, $content);
-        $response->setContent($content);
+        if ($content !== false) {
+            $content = str_replace('--RequestDuration--', $duration, $content);
+            $response->setContent($content);
+        }
 
         return $response;
     }
