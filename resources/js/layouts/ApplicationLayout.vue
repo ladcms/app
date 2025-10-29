@@ -2,7 +2,6 @@
 import Header from '@/components/layout/Header.vue';
 import Footer from '@/components/layout/Footer.vue';
 import Navigation from '@/components/layout/Navigation.vue';
-import MainWidgets from '@/components/MainWidgets.vue';
 
 defineProps({
     headerTitle: {
@@ -22,9 +21,7 @@ defineProps({
                     <Navigation />
                 </nav>
                 <main class="w-[70%] flex flex-col gap-y-3">
-                    <slot>
-                        <MainWidgets />
-                    </slot>
+                    <slot />
                 </main>
             </div>
         </div>
